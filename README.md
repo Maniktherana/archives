@@ -1,4 +1,4 @@
-# Calculator
+# Etch A Sketch 
 
 This is a solution to the project: Calculator from The Odin Project's [curriculum](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator).
 
@@ -35,7 +35,7 @@ This is a solution to the project: Calculator from The Odin Project's [curriculu
 
 ### Links
 
-🔗 **Live preview:** [link:](https://maniktherana.github.io/calculator/)
+🔗 **Live preview:** [link:]()
 
 ## My process
 
