@@ -1,35 +1,36 @@
 const calculator = document.querySelector('.calculator-container')
 const keys = calculator.querySelector('.button-container')
 const display = calculator.querySelector('.current-calculation')
+const displayFull = calculator.querySelector('.old-calculation')
 
 function updateDisplay(e) {
     if (e.target.matches('button')) {
         const key = e.target
         const action = key.dataset.action
         const keyContent = key.textContent
-        const displayedNum = display.textContent
+        const displayedNum = displayFull.textContent
 
         if (displayedNum === '0') {
-            display.textContent = keyContent
+            displayFull.textContent = keyContent
         } else {
-            display.textContent = displayedNum + keyContent
+            displayFull.textContent = displayedNum + keyContent
         }
         if (action === 'decimal') {
             if(displayedNum.includes('.')) {
-                display.textContent = displayedNum
+                displayFull.textContent = displayedNum
             } else {
-                display.textContent = displayedNum + keyContent
+                displayFull.textContent = displayedNum + keyContent
             }
         }
         if (action === 'delete') {
             if (displayedNum !== '0' && displayedNum.length !== 1) {
-                display.textContent = displayedNum.substring(0, displayedNum.length - 1);
+                displayFull.textContent = displayedNum.substring(0, displayedNum.length - 1);
             } else {
-                display.textContent = '0'
+                displayFull.textContent = '0'
             }
         }
         if (action === 'clear') {
-            display.textContent = '0'
+            displayFull.textContent = '0'
         }
     }
 }
