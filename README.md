@@ -52,16 +52,6 @@ This is a solution to the project: Calculator from The Odin Project's [curriculu
 * HTML DOM manipulation with Javascript.
 * Generating DOM elements from JavaScript
 
-```html
-
-```
-```css
-
-```
-```js
-
-```
-
 ### Continued development
 
 
