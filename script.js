@@ -30,14 +30,14 @@ function updateDisplay(e) {
                             displayedNumLower === '×') {
                     display.textContent = keyContent
 
-                // } else if (displayedNum.includes('+') ||
-                //             displayedNum.includes('-') ||
-                //             displayedNum.includes('%') ||
-                //             displayedNum.includes('÷') ||
-                //             displayedNum.includes('×')) {
-                //     displayFull.textContent = displayedNum + keyContent
-                //     display.textContent = displayedNumLower + keyContent
-                //     secondNumber = displayedNumLower + keyContent
+                } else if (displayedNum.includes('+') ||
+                            displayedNum.includes('-') ||
+                            displayedNum.includes('%') ||
+                            displayedNum.includes('÷') ||
+                            displayedNum.includes('×')) {
+                    displayFull.textContent = displayedNum + keyContent
+                    display.textContent = displayedNumLower + keyContent
+                    secondNumber = displayedNumLower + keyContent
                 } else {
                     displayFull.textContent = displayedNum + keyContent
                     display.textContent = displayedNumLower + keyContent
@@ -118,7 +118,6 @@ function updateDisplay(e) {
 }
 
 function operate(num1, num2, operation) {
-    
     let result = 0
     
     if (!num1) {
