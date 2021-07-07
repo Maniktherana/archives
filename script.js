@@ -3,8 +3,8 @@ const keys = calculator.querySelector('.button-container')
 const display = calculator.querySelector('.current-calculation')
 const displayFull = calculator.querySelector('.old-calculation')
 
-let firstNumber = 0
-let secondNumber = 0
+let firstNumber = ''
+let secondNumber = ''
 let operation = ''
 
 function updateDisplay(e) {
@@ -14,6 +14,10 @@ function updateDisplay(e) {
         const keyContent = key.textContent
         const displayedNum = displayFull.textContent
         const displayedNumLower = display.textContent
+
+        if (action === 'number') {
+            console.log('number')
+        }
 
         if (displayedNum === '0') {
             displayFull.textContent = keyContent
@@ -48,28 +52,38 @@ function updateDisplay(e) {
         }
 
         if (action === 'equals') {
-            let x = operate(firstNumber, secondNumber, operation)
+            let x = operate(parseFloat(firstNumber), parseFloat(secondNumber), operation)
             firstNumber = x
             display.textContent = firstNumber
         }
 
         if (action === 'add') {
+            displayFull.textContent = displayedNum + keyContent
+            firstNumber = display.textContent
             display.textContent = "+"
             operation = 'add'
         }
         if (action === 'subtract') {
+            displayFull.textContent = displayedNum + keyContent
+            firstNumber = display.textContent
             display.textContent = "-"
             operation = 'subtract'
         }
         if (action === 'multiply') {
+            displayFull.textContent = displayedNum + keyContent
+            firstNumber = display.textContent
             display.textContent = "x"
             operation = 'multiply'
         }
         if (action === 'divide') {
+            displayFull.textContent = displayedNum + keyContent
+            firstNumber = display.textContent
             display.textContent = "÷"
             operation = 'divide'
         }
         if (action === 'modulus') {
+            displayFull.textContent = displayedNum + keyContent
+            firstNumber = display.textContent
             display.textContent = "%"
             operation = 'modulus'
         }
@@ -93,6 +107,7 @@ function operate(num1, num2, operation) {
     } else if (operation === "modulus") {
         result = num1 % num2
     }
+    console.log(num1, operation, num2, result)
     return result
 }
 
