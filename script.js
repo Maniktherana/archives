@@ -17,15 +17,23 @@ function updateDisplay(e) {
 
         if (action === 'number') {
             console.log('number')
+            console.log( displayedNumLower)
+
+            if (displayedNum === '0') {
+                displayFull.textContent = keyContent
+                display.textContent = keyContent
+            } else if (displayedNumLower === '+' ||
+                    displayedNumLower === '-' ||
+                    displayedNumLower === '%' ||
+                    displayedNumLower === '÷' ||
+                    displayedNumLower === '×') {
+                display.textContent = keyContent
+            } else {
+                displayFull.textContent = displayedNum + keyContent
+                display.textContent = displayedNumLower + keyContent
+            }
         }
 
-        if (displayedNum === '0') {
-            displayFull.textContent = keyContent
-            display.textContent = keyContent
-        } else {
-            displayFull.textContent = displayedNum + keyContent
-            display.textContent = displayedNumLower + keyContent
-        }
         if (action === 'decimal') {
             if(displayedNumLower.includes('.')) {
                 displayFull.textContent = displayedNum
@@ -54,6 +62,7 @@ function updateDisplay(e) {
         if (action === 'equals') {
             let x = operate(parseFloat(firstNumber), parseFloat(secondNumber), operation)
             firstNumber = x
+            displayFull.textContent = firstNumber
             display.textContent = firstNumber
         }
 
@@ -62,36 +71,50 @@ function updateDisplay(e) {
             firstNumber = display.textContent
             display.textContent = "+"
             operation = 'add'
+            console.log(firstNumber)
         }
         if (action === 'subtract') {
             displayFull.textContent = displayedNum + keyContent
             firstNumber = display.textContent
             display.textContent = "-"
             operation = 'subtract'
+            console.log(firstNumber)
         }
         if (action === 'multiply') {
             displayFull.textContent = displayedNum + keyContent
             firstNumber = display.textContent
             display.textContent = "x"
             operation = 'multiply'
+            console.log(firstNumber)
         }
         if (action === 'divide') {
             displayFull.textContent = displayedNum + keyContent
             firstNumber = display.textContent
             display.textContent = "÷"
             operation = 'divide'
+            console.log(firstNumber)
         }
         if (action === 'modulus') {
             displayFull.textContent = displayedNum + keyContent
             firstNumber = display.textContent
             display.textContent = "%"
             operation = 'modulus'
+            console.log(firstNumber)
         }
     }
 }
 
 function operate(num1, num2, operation) {
+    
     let result = 0
+    
+    if (!num1) {
+        num1 = 0
+    } 
+    if (!num2) {
+        num2 = 0
+    }
+    
     if (operation === "add") {
         result = num1 + num2
     } else if (operation === "subtract") {
@@ -99,11 +122,7 @@ function operate(num1, num2, operation) {
     } else if (operation === "multiply") {
         result = num1 * num2
     } else if (operation === "divide") {
-        if (num1 & num2 === 0) {
-            result = "stop"
-        } else {
-            result = num1 / num2
-        }
+        result = num1 / num2
     } else if (operation === "modulus") {
         result = num1 % num2
     }
