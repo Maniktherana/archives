@@ -32,6 +32,22 @@ function updateDisplay(e) {
         if (action === 'clear') {
             displayFull.textContent = '0'
         }
+
+        if (action === 'add') {
+            display.textContent = "+"
+        }
+        if (action === 'subtract') {
+            display.textContent = "-"
+        }
+        if (action === 'multiply') {
+            display.textContent = "x"
+        }
+        if (action === 'divide') {
+            display.textContent = "÷"
+        }
+        if (action === 'modulus') {
+            display.textContent = "%"
+        }
     }
 }
 
