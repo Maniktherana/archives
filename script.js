@@ -19,19 +19,29 @@ function updateDisplay(e) {
             console.log('number')
             console.log( displayedNumLower)
 
-            if (displayedNum === '0') {
-                displayFull.textContent = keyContent
-                display.textContent = keyContent
-            } else if (displayedNumLower === '+' ||
-                    displayedNumLower === '-' ||
-                    displayedNumLower === '%' ||
-                    displayedNumLower === '÷' ||
-                    displayedNumLower === '×') {
-                display.textContent = keyContent
-            } else {
-                displayFull.textContent = displayedNum + keyContent
-                display.textContent = displayedNumLower + keyContent
-            }
+                if (displayedNum === '0') {
+                    displayFull.textContent = keyContent
+                    display.textContent = keyContent
+
+                } else if (displayedNumLower === '+' ||
+                            displayedNumLower === '-' ||
+                            displayedNumLower === '%' ||
+                            displayedNumLower === '÷' ||
+                            displayedNumLower === '×') {
+                    display.textContent = keyContent
+
+                // } else if (displayedNum.includes('+') ||
+                //             displayedNum.includes('-') ||
+                //             displayedNum.includes('%') ||
+                //             displayedNum.includes('÷') ||
+                //             displayedNum.includes('×')) {
+                //     displayFull.textContent = displayedNum + keyContent
+                //     display.textContent = displayedNumLower + keyContent
+                //     secondNumber = displayedNumLower + keyContent
+                } else {
+                    displayFull.textContent = displayedNum + keyContent
+                    display.textContent = displayedNumLower + keyContent
+                }
         }
 
         if (action === 'decimal') {
@@ -43,6 +53,7 @@ function updateDisplay(e) {
                 display.textContent = displayedNumLower + keyContent
             }
         }
+
         if (action === 'delete') {
             if (displayedNum !== '0' && displayedNum.length !== 1) {
                 displayFull.textContent = displayedNum.substring(0, displayedNum.length - 1);
@@ -52,14 +63,16 @@ function updateDisplay(e) {
                 display.textContent = '0'
             }
         }
+
         if (action === 'clear') {
             displayFull.textContent = '0'
             display.textContent = '0'
-            firstNumber = 0
-            secondNumber = 0
+            firstNumber = ''
+            secondNumber = ''
         }
 
         if (action === 'equals') {
+            secondNumber = display.textContent
             let x = operate(parseFloat(firstNumber), parseFloat(secondNumber), operation)
             firstNumber = x
             displayFull.textContent = firstNumber
