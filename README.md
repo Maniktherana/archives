@@ -35,7 +35,7 @@ This is a solution to the project: Calculator from The Odin Project's [curriculu
 
 ### Links
 
-🔗 **Live preview:** [link:](https://maniktherana.github.io/calculator/)
+🔗 **Live preview:** [link](https://maniktherana.github.io/calculator/)
 
 ## My process
 
