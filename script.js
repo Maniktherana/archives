@@ -118,6 +118,7 @@ function updateDisplay(e) {
 }
 
 function operate(num1, num2, operation) {
+    
     let result = 0
     
     if (!num1) {
