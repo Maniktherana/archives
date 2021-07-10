@@ -139,6 +139,7 @@ function operate(num1, num2, operation) {
     } else if (operation === "modulus") {
         result = num1 % num2
     }
+    
     console.log(num1, operation, num2, result)
     return result
 }
