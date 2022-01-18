@@ -74,6 +74,7 @@ function updateDisplay(e) {
         if (action === 'equals') {
             secondNumber = display.textContent
             let x = operate(parseFloat(firstNumber), parseFloat(secondNumber), operation)
+            console.log(parseFloat(secondNumber), secondNumber)
             firstNumber = x
             displayFull.textContent = firstNumber
             display.textContent = firstNumber
