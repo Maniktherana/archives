@@ -67,4 +67,4 @@ This is a solution to the project: Calculator from The Odin Project's [curriculu
 * GitHub: [Maniktherana](https://github.com/Maniktherana)
 
 💻 **The Odin Project**
-* (https://www.theodinproject.com/home)
+* [The Odin Project](https://www.theodinproject.com/home)
