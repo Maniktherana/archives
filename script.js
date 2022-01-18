@@ -27,17 +27,18 @@ function updateDisplay(e) {
                             displayedNumLower === '-' ||
                             displayedNumLower === '%' ||
                             displayedNumLower === '÷' ||
-                            displayedNumLower === '×') {
+                            displayedNumLower === 'x') {
                     display.textContent = keyContent
 
                 } else if (displayedNum.includes('+') ||
                             displayedNum.includes('-') ||
                             displayedNum.includes('%') ||
                             displayedNum.includes('÷') ||
-                            displayedNum.includes('×')) {
+                            displayedNum.includes('x')) {
                     displayFull.textContent = displayedNum + keyContent
                     display.textContent = displayedNumLower + keyContent
                     secondNumber = displayedNumLower + keyContent
+
                 } else {
                     displayFull.textContent = displayedNum + keyContent
                     display.textContent = displayedNumLower + keyContent
