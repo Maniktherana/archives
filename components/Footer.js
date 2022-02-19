@@ -1,7 +1,8 @@
-import { Image } from '@chakra-ui/react'
+import { Image, useColorMode } from '@chakra-ui/react'
 import footerStyles from '../styles/Footer.module.css'
 
 export const Footer = () => {
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <footer className={footerStyles.footer}>
         <a
@@ -11,7 +12,9 @@ export const Footer = () => {
         >
           Deployed on{' '}
           <span className={footerStyles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" boxSize='60px' ml={2} />
+          {colorMode === "dark" ?
+          <Image src="/vercel-logotype-light.svg" alt="Vercel Logo Light" boxSize='60px' ml={2} /> :
+          <Image src="/vercel-logotype-dark.svg" alt="Vercel Logo Dark" boxSize='60px' ml={2} />}
           </span>
         </a>
       </footer>
