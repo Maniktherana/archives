@@ -13,8 +13,8 @@ export const Nav = () => {
               </NextLink>
             </li>
             <li>
-              <NextLink href='/' passHref>
-                <Link href='/gradients'>Gradients</Link>
+              <NextLink href='/gradients' passHref>
+                <Link>Gradients</Link>
               </NextLink>
             </li>
             <li>
