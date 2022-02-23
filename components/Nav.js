@@ -6,20 +6,20 @@ import ToggleColorMode from "./ToggleColorMode"
 export const Nav = () => {
   return (
     <nav className={navStyles.nav}>
+        <div className='home'>
+          <NextLink href='/' passHref>
+            <Link>Bradients</Link>
+          </NextLink>
+        </div>
         <ul>
-            <li className='home'>
-              <NextLink href='/' passHref>
-                <Link>Bradients</Link>
-              </NextLink>
-            </li>
-            <li>
-              <NextLink href='/gradients' passHref>
-                <Link>Gradients</Link>
-              </NextLink>
-            </li>
-            <li>
-              <ToggleColorMode />
-            </li>
+          <li>
+            <NextLink href='/gradients' passHref>
+              <Link>Gradients</Link>
+            </NextLink>
+          </li>
+          <li>
+            <ToggleColorMode />
+          </li>
         </ul>
     </nav>
   )

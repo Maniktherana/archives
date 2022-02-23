@@ -11,6 +11,7 @@ import { Box,
     useColorModeValue,
  } from '@chakra-ui/react'
 
+
 const gradients = () => {
     return (
         <div>
@@ -19,6 +20,9 @@ const gradients = () => {
                 <meta name="keywords" content="gradient, gradients" />
             </Head>
             <h1>Gradients</h1>
+            <div>
+            
+            </div>
         </div>
     )
 }

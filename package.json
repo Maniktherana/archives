@@ -14,6 +14,7 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@react-three/fiber": "^7.0.26",
+    "clipboard": "^2.0.10",
     "framer-motion": "^6.2.6",
     "framer-motion-3d": "^6.2.6",
     "next": "12.1.0",
