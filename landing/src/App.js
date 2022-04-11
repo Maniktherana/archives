@@ -6,8 +6,8 @@ const App = () => {
   return (
     <>
       <SectionWrapper
-        title="View a growing number of stylish gradients to add to your next project."
-        description="Descrtiption"
+        title="More than just gradients"
+        description="View a growing number of stylish gradients and abstractions to add to your next project."
         showBtn
         mockupImg={assets.homeHero}
         banner="banner"
