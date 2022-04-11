@@ -6,11 +6,11 @@ A react native app that displays gradients and abstract art to add to your next 
 [Landing Page Preview](https://bradient.vercel.app/)
 ## Landing Page (Using React)
 
-![Landing Page](./Landing.PNG)
+![Landing Page](./Landing.png)
 
 ## App (Using React Native)
 
-![App](./App.PNG)
+![App](./App.png)
 
 
 - [Built with](#built-with)
