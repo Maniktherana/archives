@@ -2,7 +2,7 @@
 
 A react native app that displays gradients and abstract art to add to your next project.
 
-### [App Preview](https://expo.dev/@/projects/bradient)
+### [App Preview](https://expo.dev/@manikrana/bradient)
 
 ### [Landing Page Preview](https://bradient.vercel.app/)
 
