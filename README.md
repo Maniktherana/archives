@@ -1,35 +1,22 @@
 # Bradient: More than just gradients
 
+A react native app that displays gradients and abstract art to add to your next project.
+
+[App Preview](https://expo.dev/@/projects/bradient)
+[Landing Page Preview](https://bradient.vercel.app/)
+## Landing Page (Using React)
+
+![Landing Page](./Landing.PNG)
+
+## App (Using React Native)
+
+![App](./App.PNG)
 
 
-[Live preview](https://expo.dev/@/projects/bradient)
-
-- [Overview](#overview)
-  - [Introduction](#introduction)
-  - [How to use](#how-to-use)
 - [Built with](#built-with)
 - [What I Learned](#what-i-learned)
 - [Useful Resources](#useful-resources)
 - [Author](#author)
-
-## Overview 
-
-### Introduction 👋
-
-
-
-## Landing Page (Using React)
-
-![React Bootstrap](./bootstrap.PNG)
-
-## App (Using React Native)
-
-![NextUI](./nextui.PNG)
-
-
-### How to use
-
-
 
 ## Built with 🛠
 
