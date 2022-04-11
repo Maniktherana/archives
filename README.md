@@ -2,6 +2,8 @@
 
 This is a solution to the project: Calculator from The Odin Project's [curriculum](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator).
 
+### [Preview](https://maniktherana.github.io/calculator/)
+
 ## Table of contents
 
 - [Overview](#overview)
