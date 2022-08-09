@@ -4,6 +4,8 @@ This is an assessment where I was required to make a sign up form in React.
 
 ## [Live Preview](https://g2g-frontend-assessment.vercel.app/)
 
+![Screenshot](./g2g.png)
+
 ---
 
 ## Technologies Used
