@@ -1,21 +1,23 @@
+import { useState } from "react";
 import {
   Paper,
   createStyles,
   TextInput,
-  PasswordInput,
-  Checkbox,
   Button,
   Title,
   Text,
   Anchor,
 } from "@mantine/core";
+import PasswordStrength from "./PasswordStrength";
 
 type Props = {
   handleIsLogin: () => void;
 };
 
 const Register: React.FC<Props> = ({ handleIsLogin }) => {
+  const [password, setPassword] = useState("");
   const { classes } = useStyles();
+
   return (
     <Paper className={classes.form} radius={0} p={30}>
       <Title order={2} className={classes.title} align="center" mt="md" mb={50}>
@@ -26,13 +28,14 @@ const Register: React.FC<Props> = ({ handleIsLogin }) => {
         label="Email address"
         placeholder="hello@gmail.com"
         size="md"
+        sx={() => ({
+          marginBottom: "20px",
+        })}
+        required
       />
-      <PasswordInput
-        label="Password"
-        placeholder="Your password"
-        mt="md"
-        size="md"
-      />
+      {/* <PasswordInput label="Password" mt="md" size="md" required /> */}
+      <PasswordStrength />
+
       <Button
         fullWidth
         mt="xl"

@@ -11,6 +11,7 @@ import {
   Checkbox,
   Anchor,
 } from "@mantine/core";
+import EmailValidation from "./EmailValidation";
 import { GoogleButton, FacebookButton } from "./SocialButtons";
 
 type Props = {
@@ -32,11 +33,12 @@ const Login: React.FC<Props> = ({ handleIsLogin }) => {
 
       <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
-      <TextInput
+      {/* <TextInput
         label="Email address"
         placeholder="hello@gmail.com"
         size="md"
-      />
+      /> */}
+      <EmailValidation />
       <PasswordInput
         label="Password"
         placeholder="Your password"
