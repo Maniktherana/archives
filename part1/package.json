@@ -25,10 +25,13 @@
     "axios": "^0.27.2",
     "dayjs": "^1.11.4",
     "embla-carousel-react": "^7.0.0",
+    "fix": "^0.0.3",
+    "parse-link-header": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/parse-link-header": "^2.0.0",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.0",
