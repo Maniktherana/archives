@@ -5,6 +5,7 @@ import {
   ScrollArea,
   Pagination,
   Loader,
+  Tooltip,
 } from "@mantine/core";
 import axios from "axios";
 
@@ -43,7 +44,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   scrolled: {
-    boxShadow: theme.shadows.sm,
+    boxShadow: theme.shadows.lg,
   },
 }));
 
@@ -121,11 +122,23 @@ export function ResultTable() {
             ) : (
               <tbody>
                 {data &&
-                  data.map((row) => (
-                    <tr key={row.id}>
-                      <td>{row.number}</td>
-                      <td>{row.title}</td>
-                      <td>{row.user.login}</td>
+                  data.map(({ id, number, title, user, state }) => (
+                    <tr key={id}>
+                      {state === "open" ? (
+                        <td
+                          style={{
+                            backgroundColor: "#9efc9d",
+                          }}
+                        >
+                          {number}
+                        </td>
+                      ) : (
+                        <td style={{ backgroundColor: "##ff8282" }}>
+                          {number}
+                        </td>
+                      )}
+                      <td>{title}</td>
+                      <td>{user.login}</td>
                     </tr>
                   ))}
               </tbody>
