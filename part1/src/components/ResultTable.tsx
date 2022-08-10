@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createStyles, Table, ScrollArea } from "@mantine/core";
 import axios from "axios";
 
@@ -36,20 +36,22 @@ export function ResultTable() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  axios
-    .get(`https://api.github.com/repos/PHP-FFMpeg/PHP-FFMpeg/issues`)
-    .then((response) => {
-      setLoading(false);
-      setData(response.data);
-      console.log(response.data);
-    })
-    .catch((err) => {
-      setError(err.message);
-      setData([]);
-    })
-    .finally(() => {
-      setLoading(false);
-    });
+  useEffect(() => {
+    axios
+      .get(`https://api.github.com/repos/PHP-FFMpeg/PHP-FFMpeg/issues`)
+      .then((response) => {
+        setLoading(false);
+        setData(response.data);
+        console.log(response.headers.link);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setData([]);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <ScrollArea
