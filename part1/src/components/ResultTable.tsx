@@ -30,6 +30,18 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
+  div: {
+    margin: "70px 20px 0 20px",
+    padding: 10,
+    display: "flex",
+    alignItems: "center",
+    overflow: "scroll",
+
+    [theme.fn.largerThan("md")]: {
+      justifyContent: "center",
+    },
+  },
+
   scrolled: {
     boxShadow: theme.shadows.sm,
   },
@@ -68,58 +80,65 @@ export function ResultTable() {
 
   return (
     <div>
-      <ScrollArea
-        sx={{
-          height: 600,
-          width: 1000,
-          borderRadius: "8px",
-          boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
-        }}
-        onScrollPositionChange={({ y }) => setScrolled(y !== 0)}
-      >
-        <Table sx={{ minWidth: 700, minHeight: 500 }}>
-          <thead
-            className={cx(classes.header, { [classes.scrolled]: scrolled })}
-          >
-            <tr>
-              <th>No.</th>
-              <th>Issue</th>
-              <th>Posted By</th>
-            </tr>
-          </thead>
-          {loading ? (
-            // display a loading indicator in the middle of the table
-            <tbody>
+      <div className={classes.div}>
+        <ScrollArea
+          sx={{
+            height: 600,
+            width: 1000,
+            borderRadius: "8px",
+            boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+          }}
+          onScrollPositionChange={({ y }) => setScrolled(y !== 0)}
+        >
+          <Table sx={{ minWidth: 300, height: 500 }}>
+            <thead
+              className={cx(classes.header, { [classes.scrolled]: scrolled })}
+            >
               <tr>
-                <td colSpan={3}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <Loader size="lg" />
-                  </div>
-                </td>
+                <th>No.</th>
+                <th>Issue</th>
+                <th>Posted By</th>
               </tr>
-            </tbody>
-          ) : (
-            <tbody>
-              {data &&
-                data.map((row) => (
-                  <tr key={row.id}>
-                    <td>{row.number}</td>
-                    <td>{row.title}</td>
-                    <td>{row.user.login}</td>
-                  </tr>
-                ))}
-            </tbody>
-          )}
-        </Table>
-      </ScrollArea>
-      <Pagination page={currentPage} onChange={handlePageChagne} total={10} />
+            </thead>
+            {loading ? (
+              // display a loading indicator in the middle of the table
+              <tbody>
+                <tr>
+                  <td colSpan={3}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "100%",
+                      }}
+                    >
+                      <Loader size="lg" />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            ) : (
+              <tbody>
+                {data &&
+                  data.map((row) => (
+                    <tr key={row.id}>
+                      <td>{row.number}</td>
+                      <td>{row.title}</td>
+                      <td>{row.user.login}</td>
+                    </tr>
+                  ))}
+              </tbody>
+            )}
+          </Table>
+        </ScrollArea>
+      </div>
+      {/* add margin between table and pagination */}
+      <div
+        style={{ marginTop: "20px", display: "flex", justifyContent: "center" }}
+      >
+        <Pagination page={currentPage} onChange={handlePageChagne} total={10} />
+      </div>
     </div>
   );
 }
