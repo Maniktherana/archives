@@ -40,57 +40,55 @@ const MentorPanel = () => {
         </div>
 
         <div className="mt-6 flex flex-col items-center justify-center">
-          {showMore ? (
-            mentors.map((item) => (
-              <div>
-                <div className="flex justify-center items-center">
-                  <div className="flex flex-row max-w-xl rounded-lg bg-white items-center">
-                    <img
-                      className=" w-[120px] h-[120px] object-cover rounded-lg"
-                      src={item.photo}
-                      alt={item.name}
-                    />
-                    <div className="p-6 flex flex-col justify-start items-start">
-                      <h5 className="text-gray-900 text-md font-medium mb-1">
-                        {item.name}
-                      </h5>
-                      <p className="text-gray-700 text-base mb-4">
-                        {item.desc}
-                      </p>
-                      <a href="#" className="text-green-600 text-xs">
-                        SEE PROFILE
-                      </a>
+          {showMore
+            ? mentors.map((item) => (
+                <div>
+                  <div className="flex justify-center items-center">
+                    <div className="flex flex-row max-w-xl rounded-lg bg-white items-center">
+                      <img
+                        className=" w-[120px] h-[120px] object-cover rounded-lg"
+                        src={item.photo}
+                        alt={item.name}
+                      />
+                      <div className="py-6 pl-6 flex flex-col justify-start items-start">
+                        <h5 className="text-gray-900 text-md font-medium mb-1 sm:text-sm">
+                          {item.name}
+                        </h5>
+                        <p className="text-gray-700 text-sm leading-4 mb-4">
+                          {item.desc}
+                        </p>
+                        <a href="#" className="text-green-600 text-xs">
+                          SEE PROFILE
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))
-          ) : (
-            <div>
-              <div className="flex justify-center">
-                <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-                  <img
-                    className=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
-                    src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
-                    alt=""
-                  />
-                  <div className="p-6 flex flex-col justify-start">
-                    <h5 className="text-gray-900 text-xl font-medium mb-2">
-                      Card title
-                    </h5>
-                    <p className="text-gray-700 text-base mb-4">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                    <p className="text-gray-600 text-xs">
-                      Last updated 3 mins ago
-                    </p>
+              ))
+            : mentors.map((item) => (
+                <div>
+                  <div className="flex justify-center items-center">
+                    <div className="flex flex-row max-w-xl rounded-lg bg-white items-center">
+                      <img
+                        className=" w-[120px] h-[120px] object-cover rounded-lg"
+                        src={item.photo}
+                        alt={item.name}
+                      />
+                      <div className="py-6 pl-6 flex flex-col justify-start items-start">
+                        <h5 className="text-gray-900 text-md font-medium mb-1 sm:text-sm">
+                          {item.name}
+                        </h5>
+                        <p className="text-gray-700 text-sm leading-4 mb-4">
+                          {item.desc}
+                        </p>
+                        <a href="#" className="text-green-600 text-xs">
+                          SEE PROFILE
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          )}
+              ))}
         </div>
       </div>
     </div>
