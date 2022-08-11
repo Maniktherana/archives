@@ -18,6 +18,7 @@ const AppContent = () => {
       <div className="grid grid-cols-1 w-fit space-y-5 mt-5 place-self-auto self-center lg:grid-cols-2 lg:gap-4">
         <Card />
         <StatsPanel />
+        <MentorPanel />
       </div>
     </div>
   );
