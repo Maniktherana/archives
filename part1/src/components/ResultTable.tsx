@@ -5,9 +5,10 @@ import {
   ScrollArea,
   Pagination,
   Loader,
-  Tooltip,
+  Input,
 } from "@mantine/core";
 import Legend from "./Legend";
+import Search from "./Search";
 import axios from "axios";
 
 const useStyles = createStyles((theme) => ({
@@ -65,6 +66,18 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
+  searchGroup: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+
+    [theme.fn.largerThan("sm")]: {
+      flexDirection: "row",
+      justifyContent: "space-evenly",
+    },
+  },
+
   scrolled: {
     boxShadow: theme.shadows.lg,
   },
@@ -106,7 +119,8 @@ export function ResultTable() {
   return (
     <div>
       <div className={classes.div}>
-        <div>
+        <div className={classes.searchGroup}>
+          <Search />
           <Legend />
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
