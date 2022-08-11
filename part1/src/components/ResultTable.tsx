@@ -69,12 +69,11 @@ const useStyles = createStyles((theme) => ({
   searchGroup: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-evenly",
+    justifyContent: "center",
     alignItems: "center",
 
     [theme.fn.largerThan("sm")]: {
       flexDirection: "row",
-      justifyContent: "space-evenly",
     },
   },
 

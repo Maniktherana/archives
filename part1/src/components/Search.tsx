@@ -11,6 +11,7 @@ import {
 const useStyles = createStyles((theme) => ({
   divSearch: {
     width: "60%",
+    margin: "10px 20px 0 20px",
   },
 }));
 

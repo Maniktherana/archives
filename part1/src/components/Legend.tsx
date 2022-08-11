@@ -34,6 +34,7 @@ const useStyles = createStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     overflow: "scroll",
+    margin: "10px 20px 0 20px",
   },
 }));
 
