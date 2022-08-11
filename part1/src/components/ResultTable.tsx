@@ -79,7 +79,7 @@ export function ResultTable() {
         setLoading(false);
         setData(response.data);
       } catch (err) {
-        setError(err.message);
+        // setError(err.message);
         setData(null);
       } finally {
         setLoading(false);
