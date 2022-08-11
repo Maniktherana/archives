@@ -8,12 +8,21 @@ import {
 } from "@mantine/core";
 import Legend from "./Legend";
 import axios from "axios";
-import Search from "./Search";
 
 const useStyles = createStyles((theme) => ({
+  input: {
+    width: "100%",
+    borderRadius: theme.radius.md,
+    border: `1px solid ${
+      theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
+    }`,
+    padding: theme.spacing.xs,
+    fontSize: theme.fontSizes.sm,
+  },
+
   divSearch: {
     width: "60%",
-    margin: "10px 20px 0 20px",
+    alignSelf: "center",
   },
 
   loader: {
@@ -125,6 +134,7 @@ export function ResultTable() {
         <div className={classes.searchGroup}>
           <form className={classes.divSearch}>
             <input
+              className={classes.input}
               placeholder="Search issues"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
