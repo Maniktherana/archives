@@ -1,14 +1,7 @@
 import React from "react";
-import {
-  createStyles,
-  Table,
-  ScrollArea,
-  Pagination,
-  Loader,
-  Input,
-} from "@mantine/core";
+import { createStyles, Input } from "@mantine/core";
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(() => ({
   divSearch: {
     width: "60%",
     margin: "10px 20px 0 20px",

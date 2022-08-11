@@ -1,14 +1,7 @@
 import React from "react";
-import {
-  createStyles,
-  Table,
-  ScrollArea,
-  Pagination,
-  Loader,
-  Tooltip,
-} from "@mantine/core";
+import { createStyles, Tooltip } from "@mantine/core";
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(() => ({
   openLabel: {
     color: "#306427",
     backgroundColor: "#bef0d6",

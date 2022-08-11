@@ -5,7 +5,6 @@ import {
   ScrollArea,
   Pagination,
   Loader,
-  Input,
 } from "@mantine/core";
 import Legend from "./Legend";
 import Search from "./Search";

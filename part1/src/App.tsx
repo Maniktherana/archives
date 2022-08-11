@@ -1,4 +1,4 @@
-import { createStyles, MantineProvider } from "@mantine/core";
+import { MantineProvider } from "@mantine/core";
 import { ResultTable } from "./components/ResultTable";
 
 export default function App() {
