@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const stats = [
   {
@@ -44,7 +44,7 @@ const StatsPanel = () => {
     <div className="bg-white">
       <div className="max-w-2xl mx-auto py-5 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="flex justify-between">
-          <h3 className="text-xl font-extrabold tracking-tight text-gray-900">
+          <h3 className="text-xl font-bold tracking-tight text-gray-900">
             Your Stats
           </h3>
           <button

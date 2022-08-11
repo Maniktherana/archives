@@ -1,4 +1,3 @@
-import React from "react";
 import StatsPanel from "./StatsPanel";
 import MentorPanel from "./MentorPanel";
 import UpcomingPanel from "./UpcomingPanel";

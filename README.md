@@ -34,7 +34,7 @@ For this submission I utilized [Vite](https://vitejs.dev/) for quick builds, Rea
 
 ### Description-2
 
-In this one, you are required to replicate the design attached below on React. The design below is a dashboard UI made on Figma. You can use stock images wherever applicable, and you can write any text you feel fit.
+In this one, I had to make a dashboard based off a Figma Layout
 
 ### [Live Preview-2]()
 

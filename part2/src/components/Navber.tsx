@@ -1,6 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+
+import { Disclosure, Menu } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { PlayIcon } from "@heroicons/react/solid";
 import Edvolve_Logo from "../assets/Edvolve_Logo_Full_New.webp";
