@@ -7,9 +7,16 @@ import {
   Loader,
   Tooltip,
 } from "@mantine/core";
+import Legend from "./Legend";
 import axios from "axios";
 
 const useStyles = createStyles((theme) => ({
+  loader: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+  },
   open: {
     color: "#306427",
     backgroundColor: "#bef0d6",
@@ -22,6 +29,7 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: "#eccecb",
     padding: "2px 5px",
     borderRadius: "5px",
+    fontWeight: "bold",
   },
 
   header: {
@@ -46,10 +54,10 @@ const useStyles = createStyles((theme) => ({
   },
 
   div: {
-    margin: "70px 20px 0 20px",
+    margin: "10px 20px 0 20px",
     padding: 10,
     display: "flex",
-    alignItems: "center",
+    flexDirection: "column",
     overflow: "scroll",
 
     [theme.fn.largerThan("md")]: {
@@ -60,6 +68,8 @@ const useStyles = createStyles((theme) => ({
   scrolled: {
     boxShadow: theme.shadows.lg,
   },
+
+  pagination: { marginTop: "10px", display: "flex", justifyContent: "center" },
 }));
 
 export function ResultTable() {
@@ -96,70 +106,66 @@ export function ResultTable() {
   return (
     <div>
       <div className={classes.div}>
-        <ScrollArea
-          sx={{
-            height: 600,
-            width: 1000,
-            borderRadius: "8px",
-            boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
-          }}
-          onScrollPositionChange={({ y }) => setScrolled(y !== 0)}
-        >
-          <Table sx={{ minWidth: 300, height: 500 }}>
-            <thead
-              className={cx(classes.header, { [classes.scrolled]: scrolled })}
-            >
-              <tr>
-                <th>No.</th>
-                <th>Issue</th>
-                <th>Posted By</th>
-              </tr>
-            </thead>
-            {loading ? (
-              // display a loading indicator in the middle of the table
-              <tbody>
+        <div>
+          <Legend />
+        </div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <ScrollArea
+            sx={{
+              height: 600,
+              width: 1000,
+              borderRadius: "8px",
+              boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+            }}
+            onScrollPositionChange={({ y }) => setScrolled(y !== 0)}
+          >
+            <Table sx={{ minWidth: 300, height: 500 }}>
+              <thead
+                className={cx(classes.header, { [classes.scrolled]: scrolled })}
+              >
                 <tr>
-                  <td colSpan={3}>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "100%",
-                      }}
-                    >
-                      <Loader size="lg" />
-                    </div>
-                  </td>
+                  <th>No.</th>
+                  <th>Issue</th>
+                  <th>Posted By</th>
                 </tr>
-              </tbody>
-            ) : (
-              <tbody>
-                {data &&
-                  data.map(({ id, number, title, user, state }) => (
-                    <tr key={id}>
-                      {state === "open" ? (
-                        <td>
-                          <span className={classes.open}>{number}</span>
-                        </td>
-                      ) : (
-                        <td>
-                          <span className={classes.closed}>{number}</span>
-                        </td>
-                      )}
-                      <td>{title}</td>
-                      <td>{user.login}</td>
-                    </tr>
-                  ))}
-              </tbody>
-            )}
-          </Table>
-        </ScrollArea>
+              </thead>
+              {loading ? (
+                // display a loading indicator in the middle of the table
+                <tbody>
+                  <tr>
+                    <td colSpan={3}>
+                      <div className={classes.loader}>
+                        <Loader size="lg" />
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              ) : (
+                <tbody>
+                  {data &&
+                    data.map(({ id, number, title, user, state }) => (
+                      <tr key={id}>
+                        {state === "open" ? (
+                          <td>
+                            <span className={classes.open}>{number}</span>
+                          </td>
+                        ) : (
+                          <td>
+                            <span className={classes.closed}>{number}</span>
+                          </td>
+                        )}
+                        <td>{title}</td>
+                        <td>{user.login}</td>
+                      </tr>
+                    ))}
+                </tbody>
+              )}
+            </Table>
+          </ScrollArea>
+        </div>
       </div>
       {/* add margin between table and pagination */}
-      <div
-        style={{ marginTop: "20px", display: "flex", justifyContent: "center" }}
-      >
+      <div className={classes.pagination}>
         <Pagination page={currentPage} onChange={handlePageChagne} total={10} />
       </div>
     </div>
