@@ -7,10 +7,15 @@ import {
   Loader,
 } from "@mantine/core";
 import Legend from "./Legend";
-import Search from "./Search";
 import axios from "axios";
+import Search from "./Search";
 
 const useStyles = createStyles((theme) => ({
+  divSearch: {
+    width: "60%",
+    margin: "10px 20px 0 20px",
+  },
+
   loader: {
     display: "flex",
     justifyContent: "center",
@@ -87,9 +92,9 @@ export function ResultTable() {
   const { classes, cx } = useStyles();
   const [scrolled, setScrolled] = useState(false);
   const [data, setData] = useState<any[] | null>(null);
-  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const getData = async () => {
@@ -118,7 +123,15 @@ export function ResultTable() {
     <div>
       <div className={classes.div}>
         <div className={classes.searchGroup}>
-          <Search />
+          <form className={classes.divSearch}>
+            <input
+              placeholder="Search issues"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              type="text"
+            />
+          </form>
+          {/* <Search search={search} setSearch={setSearch} /> */}
           <Legend />
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -155,21 +168,31 @@ export function ResultTable() {
               ) : (
                 <tbody>
                   {data &&
-                    data.map(({ id, number, title, user, state }) => (
-                      <tr key={id}>
-                        {state === "open" ? (
-                          <td>
-                            <span className={classes.open}>{number}</span>
-                          </td>
-                        ) : (
-                          <td>
-                            <span className={classes.closed}>{number}</span>
-                          </td>
-                        )}
-                        <td>{title}</td>
-                        <td>{user.login}</td>
-                      </tr>
-                    ))}
+                    data
+                      .filter((val) => {
+                        if (search === "") {
+                          return val;
+                        } else if (
+                          val.title.toLowerCase().includes(search.toLowerCase())
+                        ) {
+                          return val;
+                        }
+                      })
+                      .map(({ id, number, title, user, state }) => (
+                        <tr key={id}>
+                          {state === "open" ? (
+                            <td>
+                              <span className={classes.open}>{number}</span>
+                            </td>
+                          ) : (
+                            <td>
+                              <span className={classes.closed}>{number}</span>
+                            </td>
+                          )}
+                          <td>{title}</td>
+                          <td>{user.login}</td>
+                        </tr>
+                      ))}
                 </tbody>
               )}
             </Table>
