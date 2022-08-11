@@ -1,4 +1,8 @@
 import React from "react";
+import StatsPanel from "./StatsPanel";
+import MentorPanel from "./MentorPanel";
+import UpcomingPanel from "./UpcomingPanel";
+import Card from "./Card";
 
 const AppContent = () => {
   return (
@@ -12,7 +16,10 @@ const AppContent = () => {
           Whats it going to be today?
         </p>
       </div>
-      <div></div>
+      <div className="grid grid-cols-1 w-fit space-y-5 mt-5 place-self-auto self-center lg:grid-cols-2 lg:gap-4">
+        <Card />
+        <StatsPanel />
+      </div>
     </div>
   );
 };
