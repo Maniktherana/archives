@@ -10,6 +10,20 @@ import {
 import axios from "axios";
 
 const useStyles = createStyles((theme) => ({
+  open: {
+    color: "#306427",
+    backgroundColor: "#bef0d6",
+    padding: "2px 5px",
+    borderRadius: "5px",
+  },
+
+  closed: {
+    color: "#8c2823",
+    backgroundColor: "#eccecb",
+    padding: "2px 5px",
+    borderRadius: "5px",
+  },
+
   header: {
     position: "sticky",
     top: 0,
@@ -125,16 +139,12 @@ export function ResultTable() {
                   data.map(({ id, number, title, user, state }) => (
                     <tr key={id}>
                       {state === "open" ? (
-                        <td
-                          style={{
-                            backgroundColor: "#9efc9d",
-                          }}
-                        >
-                          {number}
+                        <td>
+                          <span className={classes.open}>{number}</span>
                         </td>
                       ) : (
-                        <td style={{ backgroundColor: "##ff8282" }}>
-                          {number}
+                        <td>
+                          <span className={classes.closed}>{number}</span>
                         </td>
                       )}
                       <td>{title}</td>
