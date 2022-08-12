@@ -1,7 +1,5 @@
 import StatsPanel from "./StatsPanel";
 import MentorPanel from "./MentorPanel";
-import UpcomingPanel from "./UpcomingPanel";
-import Card from "./Card";
 
 const AppContent = () => {
   return (
