@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-# archives
-
-=======
-
 # G2G frontend assessment
 
 This is an assessment where I was required to make a sign up form in React.
@@ -29,5 +23,3 @@ This is an assessment where I was required to make a sign up form in React.
 ## Author
 
 **Manik Rana**
-
-> > > > > > > g2g-frontend-assessment/main
