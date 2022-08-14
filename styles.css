@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html, body {
+    background-color: #F6F9FC;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1.5px;
+    line-height: 0.5;
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1em;
+    padding: 1em;
+    background: rgb(75,95,116);
+    background: linear-gradient(180deg, rgba(75,95,116,1) 0%, rgba(40,64,88,1) 100%);
+    width: 350px;
+    height: 480px;
+    border-radius: 30px;
+    box-shadow: -1px 14px 38px -4px rgba(0,0,0,0.66);
+    color: #F6F9FC;
+}
+
+.screen-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1em;
+    width: 280px;
+    height: 80px;
+    margin-bottom: 25px;
+    border: 19px solid #0c2742;
+    border-radius: 20px;
+    background: rgb(45,68,91);
+    background: linear-gradient(180deg, rgba(45,68,91,1) 0%, rgba(21,47,64,1) 100%);
+    overflow: hidden;
+}
+
+.current-calculation {
+    font-size: xx-large;
+    letter-spacing: 3px;
+    
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+button {
+    width: 80px;
+    height: 40px;
+    margin: 0.5em 0.2em;
+    border-radius: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.205);
+    background: rgb(93,112,130);
+    background: linear-gradient(180deg, rgb(81, 101, 120) 51%, rgb(63, 85, 106) 100%);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    color: #f6f9fcb6;
+    font-family: 'Roboto', sans-serif;
+    font-style: bold;
+    font-weight: 700;
+    font-size: large;
+    transition: all 0.15s ease-in-out;
+}
+
+.number, .decimal {
+    background: rgb(53,77,99);
+    background: linear-gradient(180deg, rgba(53,77,99,1) 50%, rgba(43,67,90,1) 100%);
+}
+
+.clear-screen {
+    background: rgb(226,99,85);
+    background: linear-gradient(180deg, rgba(226,99,85,1) 50%, rgba(226,99,85,1) 100%);
+}
+
+.clear {
+    background: rgb(226,146,85);
+    background: linear-gradient(180deg, rgba(226,146,85,1) 50%, rgba(226,127,85,1) 100%);
+}
+
+.equals {
+    grid-column: 3 / span 2;
+    width: 160px;
+    background: rgb(63,182,139);
+    background: linear-gradient(180deg, rgba(63,182,139,1) 51%, rgba(51,163,119,1) 100%);
+}
+
+button:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.56);
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+}
+
+button:active {
+    box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.75) inset;
+
+}
